@@ -32,8 +32,10 @@ class Response
 
     public function isOkay()
     {
-        $isOkay = $this->response->ok;
+        $isOkay = filter_var($this->response->ok, FILTER_VALIDATE_BOOLEAN);
         if (!$isOkay) $this->error = $this->errorTypes[$this->response->error];
+
+        return $isOkay;
     }
 
     public function getError()
