@@ -7,10 +7,15 @@ class Response
     protected $rawResponse;
     protected $response;
     protected $errorTypes = array(
-        'invalid_auth' => 'Invalid authentication token',
         'account_inactive' => 'Authentication token is for a deleted user or team',
         'channel_not_found' => 'Value passed for channel was invalid',
-        'is_archived' => 'Channel has been archived'
+        'invalid_auth' => 'Invalid authentication token',
+        'is_archived' => 'Channel has been archived',
+        'msg_too_long' => 'Message text is too long',
+        'no_text' => 'No message text provided',
+        'not_authed' => 'No authentication token provided',
+        'not_in_channel' => 'Cannot post user messages to a channel they are not in',
+        'rate_limited' => 'Application has posted too many messages',
     );
     protected $error = null;
 
